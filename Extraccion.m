@@ -3,3 +3,8 @@ imagen = imread( [ ruta, nombre ] );
 figure;
 imshow( imagen );
 [ n, m ] = size( imagen );
+[ nombreTxt, rutaTxt ] = uigetfile( '*.txt', 'Abrir' );
+texto = fopen( strcat( rutaTxt, nombreTxt ) );
+caracteres8Bits = fread( texto, '*uint8' );
+longuitudTexto = length( caracteres8Bits );
+textoVector = [ ];
